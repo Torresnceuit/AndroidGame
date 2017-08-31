@@ -1,0 +1,18 @@
+nerLocked(ClipData data, int uid) {
+        final int N = data.getItemCount();
+        for (int i=0; i<N; i++) {
+            checkItemOwnerLocked(data.getItemAt(i), uid);
+        }
+    }
+
+    private final void grantUriLocked(Uri uri, String pkg, int userId) {
+        long ident = Binder.clearCallingIdentity();
+        try {
+            int sourceUserId = ContentProvider.getUserIdFromUri(uri, userId);
+            uri = ContentProvider.getUriWithoutUserId(uri);
+            mAm.grantUriPermissionFromOwner(mPermissionOwner, Process.myUid(), pkg,
+                    uri, Intent.FLAG_GRANT_READ_URI_PERMISSION, sourceUserId, userId);
+        } catch (RemoteException e) {
+        } finally {
+            Binder.restoreCallingIdentity(ident);
+       

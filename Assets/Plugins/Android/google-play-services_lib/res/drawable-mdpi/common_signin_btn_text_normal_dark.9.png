@@ -1,0 +1,33 @@
+I + level * amountPerLevel);
+        // Put RSSI in the middle of the range.
+        rssi += amountPerLevel / 2;
+        Intent i = new Intent(WifiManager.RSSI_CHANGED_ACTION);
+        i.putExtra(WifiManager.EXTRA_NEW_RSSI, rssi);
+        mNetworkController.onReceive(mContext, i);
+    }
+
+    protected void setWifiEnabled(boolean enabled) {
+        Intent i = new Intent(WifiManager.WIFI_STATE_CHANGED_ACTION);
+        i.putExtra(WifiManager.EXTRA_WIFI_STATE,
+                enabled ? WifiManager.WIFI_STATE_ENABLED : WifiManager.WIFI_STATE_DISABLED);
+        mNetworkController.onReceive(mContext, i);
+    }
+
+    protected void setWifiState(boolean connected, String ssid) {
+        Intent i = new Intent(WifiManager.NETWORK_STATE_CHANGED_ACTION);
+        NetworkInfo networkInfo = Mockito.mock(NetworkInfo.class);
+        Mockito.when(networkInfo.isConnected()).thenReturn(connected);
+
+        WifiInfo wifiInfo = Mockito.mock(WifiInfo.class);
+        Mockito.when(wifiInfo.getSSID()).thenReturn(ssid);
+
+        i.putExtra(WifiManager.EXTRA_NETWORK_INFO, networkInfo);
+        i.putExtra(WifiManager.EXTRA_WIFI_INFO, wifiInfo);
+        mNetworkController.onReceive(mContext, i);
+    }
+
+    protected void verifyLastQsDataDirection(boolean in, boolean out) {
+        ArgumentCaptor<Boolean> inArg = ArgumentCaptor.forClass(Boolean.class);
+        ArgumentCaptor<Boolean> outArg = ArgumentCaptor.forClass(Boolean.class);
+
+        Mockito.verify(mNetworkSignalCh

@@ -1,0 +1,23 @@
+    <member name="T:System.Threading.Tasks.TaskExtensions">
+            <summary>
+            Provides extension methods for working with <see cref="T:System.Threading.Tasks.Task"/>s.
+            </summary>
+        </member>
+        <member name="M:System.Threading.Tasks.TaskExtensions.Unwrap(System.Threading.Tasks.Task{System.Threading.Tasks.Task})">
+            <summary>
+            Unwraps a nested task, producing a task that is complete when both the outer
+            and inner tasks are complete. This is primarily useful for chaining asynchronous
+            operations together.
+            </summary>
+            <param name="task">The task to unwrap.</param>
+            <returns>A new task that is complete when both the outer and inner tasks
+            are complete.</returns>
+        </member>
+        <member name="M:System.Threading.Tasks.TaskExtensions.Unwrap``1(System.Threading.Tasks.Task{System.Threading.Tasks.Task{``0}})">
+            <summary>
+            Unwraps a nested task, producing a task that is complete when both the outer
+            and inner tasks are complete and that has the inner task's result.
+            This is primarily useful for chaining asynchronous operations together.
+            </summary>
+            <param name="task">The task to unwrap.</param>
+            <returns

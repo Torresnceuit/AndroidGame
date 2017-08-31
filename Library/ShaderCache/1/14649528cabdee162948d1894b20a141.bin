@@ -1,0 +1,77 @@
+c2 P_32;
+  P_32 = (tmpvar_25.xy + _ShadowOffsets[3].xy);
+  lowp float tmpvar_33;
+  tmpvar_33 = texture2D (_ShadowMapTexture, P_32).x;
+  shadowVals_24.w = tmpvar_33;
+  bvec4 tmpvar_34;
+  tmpvar_34 = lessThan (shadowVals_24, tmpvar_25.zzzz);
+  mediump vec4 tmpvar_35;
+  tmpvar_35 = _LightShadowData.xxxx;
+  mediump float tmpvar_36;
+  if (tmpvar_34.x) {
+    tmpvar_36 = tmpvar_35.x;
+  } else {
+    tmpvar_36 = 1.0;
+  };
+  mediump float tmpvar_37;
+  if (tmpvar_34.y) {
+    tmpvar_37 = tmpvar_35.y;
+  } else {
+    tmpvar_37 = 1.0;
+  };
+  mediump float tmpvar_38;
+  if (tmpvar_34.z) {
+    tmpvar_38 = tmpvar_35.z;
+  } else {
+    tmpvar_38 = 1.0;
+  };
+  mediump float tmpvar_39;
+  if (tmpvar_34.w) {
+    tmpvar_39 = tmpvar_35.w;
+  } else {
+    tmpvar_39 = 1.0;
+  };
+  mediump vec4 tmpvar_40;
+  tmpvar_40.x = tmpvar_36;
+  tmpvar_40.y = tmpvar_37;
+  tmpvar_40.z = tmpvar_38;
+  tmpvar_40.w = tmpvar_39;
+  mediump float tmpvar_41;
+  tmpvar_41 = dot (tmpvar_40, vec4(0.25, 0.25, 0.25, 0.25));
+  tmpvar_23 = tmpvar_41;
+  highp float tmpvar_42;
+  tmpvar_42 = clamp ((tmpvar_23 + tmpvar_20), 0.0, 1.0);
+  tmpvar_19 = tmpvar_42;
+  highp float tmpvar_43;
+  tmpvar_43 = (atten_5 * tmpvar_19);
+  atten_5 = tmpvar_43;
+  lowp vec4 tmpvar_44;
+  tmpvar_44 = texture2D (_CameraGBufferTexture0, tmpvar_7);
+  gbuffer0_3 = tmpvar_44;
+  lowp vec4 tmpvar_45;
+  tmpvar_45 = texture2D (_CameraGBufferTexture1, tmpvar_7);
+  gbuffer1_2 = tmpvar_45;
+  lowp vec4 tmpvar_46;
+  tmpvar_46 = texture2D (_CameraGBufferTexture2, tmpvar_7);
+  gbuffer2_1 = tmpvar_46;
+  highp vec3 tmpvar_47;
+  tmpvar_47 = (_LightColor.xyz * tmpvar_43);
+  tmpvar_4 = tmpvar_47;
+  mediump vec3 tmpvar_48;
+  tmpvar_48 = normalize(((gbuffer2_1.xyz * 2.0) - 1.0));
+  highp vec3 tmpvar_49;
+  tmpvar_49 = normalize((tmpvar_10 - _WorldSpaceCameraPos));
+  mediump vec3 viewDir_50;
+  viewDir_50 = -(tmpvar_49);
+  mediump vec3 tmpvar_51;
+  tmpvar_51 = normalize((lightDir_6 + viewDir_50));
+  mediump float tmpvar_52;
+  tmpvar_52 = max (0.0, dot (lightDir_6, tmpvar_51));
+  mediump float tmpvar_53;
+  tmpvar_53 = (1.0 - gbuffer1_2.w);
+  mediump float tmpvar_54;
+  mediump float tmpvar_55;
+  tmpvar_55 = (10.0 / log2((
+    ((1.0 - tmpvar_53) * 0.968)
+   + 0.03)));
+  tmpvar_54 = (tmpv

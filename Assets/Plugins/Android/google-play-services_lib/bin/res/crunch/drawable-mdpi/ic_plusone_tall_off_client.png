@@ -1,0 +1,28 @@
+ 0.0);
+    }
+
+    /**
+     * Returns the value of a String property, or ""
+     * if the property has not been defined.
+     *
+     * @param property The name of the property to return
+     * @return the value of the property
+     * @throws TypeException if the property is set and is not a string
+     */
+    public String getString(String property) {
+        return getString(property, "");
+    }
+
+    // Values returned by getStringInfo()
+    public static final int STRING_TYPE_MISMATCH = -2;
+    public static final int STRING_NOT_SET = -1;
+    public static final int STRING_NULL = 0;
+    public static final int STRING_SET = 1;
+
+    /**
+     * Provides string type information about a property.
+     *
+     * @param property the property to check
+     * @return STRING_SET if the property is a string and is non-null.
+     *         STRING_NULL if the property is a string and is null.
+ 

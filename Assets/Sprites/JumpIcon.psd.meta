@@ -1,0 +1,60 @@
+   DirtyEditor();
+            }
+        }
+    }
+
+    public void SetAppLabel(int index, string value)
+    {
+        if (appLabels[index] != value)
+        {
+            AppLabels[index] = value;
+            DirtyEditor();
+        }
+    }
+
+    public string[] AppLabels
+    {
+        get { return appLabels; }
+        set
+        {
+            if (appLabels != value)
+            {
+                appLabels = value;
+                DirtyEditor();
+            }
+        }
+    }
+
+    public static string[] AllAppIds
+    {
+        get
+        {
+            return Instance.AppIds;
+        }
+    }
+
+    public static string AppId
+    {
+        get
+        {
+            return Instance.AppIds[Instance.SelectedAppIndex];
+        }
+    }
+
+    public static bool IsValidAppId
+    {
+        get
+        {
+            return FBSettings.AppId != null 
+                && FBSettings.AppId.Length > 0 
+                && !FBSettings.AppId.Equals("0");
+        }
+    }
+
+    public static bool Cookie
+    {
+        get { return Instance.cookie; }
+        set
+        {
+            if (Instance.cookie != value)
+   

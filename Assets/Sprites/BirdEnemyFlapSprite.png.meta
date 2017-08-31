@@ -1,0 +1,47 @@
+*
+     * @return the previous value
+     */
+    public final int getAndDecrement() {
+        for (;;) {
+            int current = get();
+            int next = current - 1;
+            if (compareAndSet(current, next))
+                return current;
+        }
+    }
+
+    /**
+     * Atomically adds the given value to the current value.
+     *
+     * @param delta the value to add
+     * @return the previous value
+     */
+    public final int getAndAdd(int delta) {
+        for (;;) {
+            int current = get();
+            int next = current + delta;
+            if (compareAndSet(current, next))
+                return current;
+        }
+    }
+
+    /**
+     * Atomically increments by one the current value.
+     *
+     * @return the updated value
+     */
+    public final int incrementAndGet() {
+        for (;;) {
+            int current = get();
+            int next = current + 1;
+            if (compareAndSet(current, next))
+                return next;
+        }
+    }
+
+    /**
+     * Atomically decrements by one the current value.
+     *
+     * @return the updated value
+     */
+    public final int 

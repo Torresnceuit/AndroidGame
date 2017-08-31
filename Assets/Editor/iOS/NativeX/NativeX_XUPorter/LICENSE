@@ -1,0 +1,30 @@
+using UnityEngine;
+#if UNITY_EDITOR
+using UnityEditor;
+using UnityEditor.Callbacks;
+using NativeX.UnityEditor.XCodeEditor;
+#endif
+using System.IO;
+
+public static class NativeX_XCodePostProcess
+{
+
+	private static NativeXDeepLinkProcess deepLinkProcess = new NativeXDeepLinkProcess();
+	private static bool enableDeepLinking = false;
+	
+#if UNITY_EDITOR
+	[PostProcessBuild(999)]
+	public static void OnPostProcessBuild( BuildTarget target, string pathToBuiltProject )
+	{
+		if (target != BuildTarget.iOS) {
+			Debug.LogWarning("Target is not iPhone. XCodePostProcess will not run");
+			return;
+		}
+
+		// Create a new project object from build target
+		XCProject project = new XCProject( pathToBuiltProject );
+
+		// Find and run through all projmods files to patch the project.
+		// Please pay attention that ALL projmods files in your project folder will be excuted!
+		Debug.Log("datapath=" + Application.dataPath);
+		string[] files = Directory.GetFiles( Path.Combine(Application.dataPath, "Editor/iOS/NativeX"), "NativeX.projmods.txt", SearchOption.AllDirectories )

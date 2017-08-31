@@ -1,0 +1,38 @@
+ return mCurrentFlashMode;
+    }
+
+    public void setFlashMode(CameraCapabilities.FlashMode flashMode) {
+        mCurrentFlashMode = flashMode;
+    }
+
+    /** Focus **/
+
+    /**
+     * Sets the focus mode.
+     * @param focusMode The focus mode to use.
+     */
+    public void setFocusMode(CameraCapabilities.FocusMode focusMode) {
+        mCurrentFocusMode = focusMode;
+    }
+
+    /**
+     * @return The current focus mode.
+     */
+    public CameraCapabilities.FocusMode getCurrentFocusMode() {
+        return mCurrentFocusMode;
+    }
+
+    /**
+     * @param areas The areas to focus. The coordinate system has domain and
+     *              range [-1000,1000], measured relative to the visible preview
+     *              image, with orientation matching that of the sensor. This
+     *              means the coordinates must be transformed to account for
+     *              the devices rotation---but not the zoom level---before being
+     *              passed into this method.
+     */
+    public void setFocusAreas(List<Camera.Area> areas) {
+        mFocusAreas.clear();
+        if (areas != null) {
+            mFocusAreas.addAll(areas);
+        }
+    

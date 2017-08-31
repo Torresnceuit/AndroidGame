@@ -1,0 +1,68 @@
+using UnityEngine;
+using UnityEditor;
+using UnityEditor.Callbacks;
+using System.Collections;
+using System.Collections.Generic;
+using System.IO;
+using System.Diagnostics;
+using System.Linq;
+using System.Xml;
+using System.Runtime.Serialization;
+using System.Text;
+
+
+public class NativeXDeepLinkProcess {
+
+	public string CFBundleURLName;
+	public List<string> schemes = new List<string>();
+	public string productName;
+	public string sceneName;
+
+
+	public NativeXDeepLinkProcess()
+	{
+	}
+
+	public void processPlist(string path)
+	{
+		XmlDocument doc = new XmlDocument();
+
+		UnityEngine.Debug.Log("Loading Document");
+		doc.Load(path);
+		UnityEngine.Debug.Log("Assigning Element");
+		XmlElement plist = doc.DocumentElement;
+
+		UnityEngine.Debug.Log("Creating new Element");
+		XmlElement URLTypes = doc.CreateElement("key");
+		URLTypes.InnerText="CFBundleURLTypes";
+		plist.LastChild.InsertAfter(URLTypes, plist.LastChild.LastChild);
+
+		UnityEngine.Debug.Log("Loading XML");
+		XmlElement firstArray = doc.CreateElement("array");
+		XmlElement dict = doc.CreateElement("dict");
+		XmlElement bundleURL = doc.CreateElement("key");
+		bundleURL.InnerText = "CFBundleURLName";
+		dict.AppendChild(bundleURL);
+		XmlElement urlName = doc.CreateElement("string");
+		urlName.InnerText = CFBundleURLName;
+		dict.AppendChild(urlName);
+		XmlElement urlScheme = doc.CreateElement("key");
+		urlScheme.InnerText = "CFBundleURLSchemes";
+		dict.AppendChild(urlScheme);
+		XmlElement schemeArray = doc.CreateElement("array");
+		if(schemes.Count>0)
+		{
+			foreach(var s in schemes){
+				XmlElement scheme = doc.CreateElement("string");
+				scheme.InnerText = s;
+				schemeArray.AppendChild(scheme);
+			}
+		}else{
+			UnityEngine.Debug.Log("No Schemes have been added");
+		}
+		dict.AppendChild(schemeArray);
+		firstArray.AppendChild(dict);
+		plist.LastChild.InsertAfter(firstArray, URLTypes);
+		doc.Save(path);
+
+		var stringWriter = new StringWriter()

@@ -1,0 +1,18 @@
+                  !"android".equals(ri.activityInfo.packageName) ||
+                    !(ResolverActivity.class.getName().equals(ri.activityInfo.name)
+                    || ChooserActivity.class.getName().equals(ri.activityInfo.name));
+
+            try {
+                startActivityAsCaller(newIntent, null, targetUserId);
+            } catch (RuntimeException e) {
+                int launchedFromUid = -1;
+                String launchedFromPackage = "?";
+                try {
+                    launchedFromUid = ActivityManagerNative.getDefault().getLaunchedFromUid(
+                            getActivityToken());
+                    launchedFromPackage = ActivityManagerNative.getDefault().getLaunchedFromPackage(
+                            getActivityToken());
+                } catch (RemoteException ignored) {
+                }
+
+                Slog.wtf(TAG, "Unable to launch 

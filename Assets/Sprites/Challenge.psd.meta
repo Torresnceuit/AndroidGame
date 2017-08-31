@@ -1,0 +1,30 @@
+ocated array of <code>Delayed</code>:
+
+ <pre> <code>Delayed[] a = q.toArray(new Delayed[0]);</code></pre>
+
+ Note that <code>toArray(new Object[0])</code> is identical in function to
+ <code>toArray()</code>.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>a</td>
+          <td>the array into which the elements of the queue are to
+          be stored, if it is big enough; otherwise, a new array of the
+          same runtime type is allocated for this purpose</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>an array containing all of the elements in this queue</li></ul>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../reference/java/lang/ArrayStoreException.html">ArrayStoreException</a></td>
+            <td>if the runtime type of the specified array
+         is not a supertype of the runtime type of every element in
+         this queue</td>
+        

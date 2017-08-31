@@ -1,0 +1,64 @@
+ate static Vector<FieldContainer> getPositiveCurrencyVectorUS() {
+    Vector<FieldContainer> v = new Vector<FieldContainer>();
+    v.add(new FieldContainer(0, 1, NumberFormat.Field.CURRENCY));
+    v.add(new FieldContainer(1, 4, NumberFormat.Field.INTEGER));
+    v.add(new FieldContainer(4, 5, NumberFormat.Field.DECIMAL_SEPARATOR));
+    v.add(new FieldContainer(5, 7, NumberFormat.Field.FRACTION));
+    return v;
+  }
+
+  private static Vector<FieldContainer> getNegativeCurrencyVectorUS() {
+    Vector<FieldContainer> v = new Vector<FieldContainer>();
+    v.add(new FieldContainer(0, 1, NumberFormat.Field.SIGN));
+    v.add(new FieldContainer(1, 2, NumberFormat.Field.CURRENCY));
+    v.add(new FieldContainer(2, 5, NumberFormat.Field.INTEGER));
+    v.add(new FieldContainer(5, 6, NumberFormat.Field.DECIMAL_SEPARATOR));
+    v.add(new FieldContainer(6, 8, NumberFormat.Field.FRACTION));
+    return v;
+  }
+
+  private static Vector<FieldContainer> getPercentVectorUS() {
+    Vector<FieldContainer> v = new Vector<FieldContainer>();
+    v.add(new FieldContainer(0, 2, NumberFormat.Field.INTEGER));
+    v.add(new FieldContainer(2, 3, NumberFormat.Field.INTEGER));
+    v.add(new FieldContainer(2, 3, NumberFormat.Field.GROUPING_SEPARATOR));
+    v.add(new FieldContainer(3, 6, NumberFormat.Field.INTEGER));
+    v.add(new FieldContainer(6, 7, NumberFormat.Field.PERCENT));
+    return v;
+  }
+
+  private static Vector<FieldContainer> getPermilleVector() {
+    Vector<FieldContainer> v = new Vector<FieldContainer>();
+    v.add(new FieldContainer(0, 6, NumberFormat.Field.INTEGER));
+    v.add(new FieldContainer(6, 7, NumberFormat.Field.PERMILLE));
+    return v;
+  }
+
+  private static Vector<FieldContainer> getNegativeExponentVector() {
+    Vector<FieldContainer> v = new Vector<FieldContainer>();
+    v.add(new FieldContainer(0, 4, NumberFormat.Field.INTEGER));
+    v.add(new FieldContainer(4, 5, NumberFormat.Field.DECIMAL_SEPARATOR));
+    v.add(new FieldContainer(5, 6, NumberFormat.Field.FRACTION));
+    v.add(new FieldContainer(6, 7, NumberFormat.Field.EXPONENT_SYMBOL));
+    v.add(new FieldContainer(7, 8, NumberFormat.Field.EXPONENT_SIGN));
+    v.add(new FieldContainer(8, 9, NumberFormat.Field.EXPONENT));
+    return v;
+  }
+
+  private static Vector<FieldContainer> getPositiveExponentVector() {
+    Vector<FieldContainer> v = new Vector<FieldContainer>();
+    v.add(new FieldContainer(0, 2, NumberFormat.Field.INTEGER));
+    v.add(new FieldContainer(2, 3, NumberFormat.Field.DECIMAL_SEPARATOR));
+    v.add(new FieldContainer(3, 5, NumberFormat.Field.FRACTION));
+    v.add(new FieldContainer(5, 6, NumberFormat.Field.EXPONENT_SYMBOL));
+    v.add(new FieldContainer(6, 7, NumberFormat.Field.EXPONENT));
+    return v;
+  }
+
+  private static Vector<FieldContainer> getNumberVector2US() {
+    Vector<FieldContainer> v = new Vector<FieldContainer>();
+    v.add(new FieldContainer(0, 3, NumberFormat.Field.INTEGER));
+    v.add(new FieldContainer(3, 4, NumberFormat.Field.GROUPING_SEPARATOR));
+    v.add(new FieldContainer(3, 4, NumberFormat.Field.INTEGER));
+    v.add(new FieldContainer(4, 7, NumberFormat.Field.INTEGER));
+    v.add(new

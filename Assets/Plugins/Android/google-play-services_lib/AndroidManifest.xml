@@ -1,0 +1,39 @@
+      throw new UnsupportedOperationException();
+    }
+
+    @Override boolean protectedHasArray() {
+        return false;
+    }
+
+    @Override
+    public FloatBuffer put(float c) {
+        if (position == limit) {
+            throw new BufferOverflowException();
+        }
+        byteBuffer.putFloat(position++ * SizeOf.FLOAT, c);
+        return this;
+    }
+
+    @Override
+    public FloatBuffer put(int index, float c) {
+        checkIndex(index);
+        byteBuffer.putFloat(index * SizeOf.FLOAT, c);
+        return this;
+    }
+
+    @Override
+    public FloatBuffer put(float[] src, int srcOffset, int floatCount) {
+        byteBuffer.limit(limit * SizeOf.FLOAT);
+        byteBuffer.position(position * SizeOf.FLOAT);
+        if (byteBuffer instanceof DirectByteBuffer) {
+            ((DirectByteBuffer) byteBuffer).put(src, srcOffset, floatCount);
+        } else {
+            ((ByteArrayBuffer) byteBuffer).put(src, srcOffset, floatCount);
+        }
+        this.position += floatCount;
+        return this;
+    }
+
+    @Override
+    public FloatBuffer slice() {
+        byteBuffer.li

@@ -1,0 +1,21 @@
+iump float tmpvar_32;
+  tmpvar_32 = max (0.0, dot (lightDir_7, tmpvar_31));
+  highp vec3 tmpvar_33;
+  tmpvar_33 = normalize((lightDir_7 - normalize(
+    (tmpvar_11 - _WorldSpaceCameraPos)
+  )));
+  h_4 = tmpvar_33;
+  mediump float tmpvar_34;
+  tmpvar_34 = pow (max (0.0, dot (h_4, tmpvar_31)), (nspec_5.w * 128.0));
+  spec_3 = tmpvar_34;
+  highp float tmpvar_35;
+  tmpvar_35 = (spec_3 * clamp (tmpvar_29, 0.0, 1.0));
+  spec_3 = tmpvar_35;
+  highp vec3 tmpvar_36;
+  tmpvar_36 = (_LightColor.xyz * (tmpvar_32 * tmpvar_29));
+  res_2.xyz = tmpvar_36;
+  mediump vec3 c_37;
+  c_37 = _LightColor.xyz;
+  mediump float tmpvar_38;
+  tmpvar_38 = dot (c_37, unity_ColorSpaceLuminance.xyz);
+  h

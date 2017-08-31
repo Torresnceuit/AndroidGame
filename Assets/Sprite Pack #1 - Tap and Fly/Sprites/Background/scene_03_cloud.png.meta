@@ -1,0 +1,29 @@
+r().getCount() - 1, 
+                newLastChild.getId());
+    }
+    
+    // TODO: needs to be adjusted to pass on non-HVGA displays
+    // @LargeTest
+    public void testShortScroll() {
+        View firstChild = mListView.getChildAt(0);
+        if (firstChild.getTop() < this.mListView.getListPaddingTop()) {
+            firstChild = mListView.getChildAt(1);
+        }
+            
+        View lastChild = mListView.getChildAt(mListView.getChildCount() - 1);
+        
+        int lastTop = lastChild.getTop();
+        
+        TouchUtils.dragViewBy(this, firstChild, Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL,
+                0, ViewConfiguration.getTouchSlop() + 1 + 10);
+        
+        View newLastChild = mListView.getChildAt(mListView.getChildCount() - 1);
+        
+        assertEquals("View scrolled to wrong position", lastTop, newLastChild.getTop() - 10);
+        assertEquals("Wrong view in last position", mListView.getAdapter().getCount() - 1,
+                newLastChild.getId());
+    }
+    
+    // TODO: needs to be adjusted to pass on non-HVGA displays
+    // @LargeTest
+    public void testLongScr

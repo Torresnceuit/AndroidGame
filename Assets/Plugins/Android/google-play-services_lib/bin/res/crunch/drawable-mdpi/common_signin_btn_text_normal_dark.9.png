@@ -1,0 +1,16 @@
+">"Kaku2"</string>
+    <string name="mediasize_japanese_you4" msgid="2091777168747058008">"You4"</string>
+    <string name="mediasize_unknown_portrait" msgid="3088043641616409762">"Retrato desconhecido"</string>
+    <string name="mediasize_unknown_landscape" msgid="4876995327029361552">"Paisagem desconhecido"</string>
+    <string name="write_fail_reason_cancelled" msgid="7091258378121627624">"Cancelado"</string>
+    <string name="write_fail_reason_cannot_write" msgid="8132505417935337724">"Erro ao gravar o conteúdo"</string>
+    <string name="reason_unknown" msgid="6048913880184628119">"desconhecido"</string>
+    <string name="reason_service_unavailable" msgid="7824008732243903268">"Serviço de impressão não ativado"</string>
+    <string name="print_service_installed_title" msgid="2246317169444081628">"Serviço <xliff:g id="NAME">%s</xliff:g> instalado"</string>
+    <string name="print_service_installed_message" msgid="5897362931070459152">"Toque para ativar"</string>
+    <string name="restr_pin_enter_admin_pin" msgid="783643731895143970">"Inserir PIN do administrador"</string>
+    <string name="restr_pin_enter_pin" msgid="3395953421368476103">"Insira o PIN"</string>
+    <string name="restr_pin_incorrect" msgid="8571512003955077924">"Incorreto"</string>
+    <string name="restr_pin_enter_old_pin" msgid="1462206225512910757">"PIN atual"</string>
+    <string name="restr_pin_enter_new_pin" msgid="5959606691619959184">"Novo PIN"</string>
+    <string

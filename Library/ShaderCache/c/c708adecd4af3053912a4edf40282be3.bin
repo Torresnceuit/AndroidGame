@@ -1,0 +1,26 @@
+ture, coord_32);
+  shadows_24.w = tmpvar_33;
+  mediump vec4 tmpvar_34;
+  tmpvar_34 = (_LightShadowData.xxxx + (shadows_24 * (1.0 - _LightShadowData.xxxx)));
+  shadows_24 = tmpvar_34;
+  mediump float tmpvar_35;
+  tmpvar_35 = dot (tmpvar_34, vec4(0.25, 0.25, 0.25, 0.25));
+  tmpvar_23 = tmpvar_35;
+  highp float tmpvar_36;
+  tmpvar_36 = clamp ((tmpvar_23 + clamp (
+    ((mix (tmpvar_10.z, sqrt(
+      dot (tmpvar_12, tmpvar_12)
+    ), unity_ShadowFadeCenterAndType.w) * _LightShadowData.z) + _LightShadowData.w)
+  , 0.0, 1.0)), 0.0, 1.0);
+  tmpvar_20 = tmpvar_36;
+  highp float tmpvar_37;
+  tmpvar_37 = (atten_6 * tmpvar_20);
+  atten_6 = tmpvar_37;
+  lowp vec4 tmpvar_38;
+  tmpvar_38 = texture (_CameraGBufferTexture0, tmpvar_8);
+  gbuffer0_4 = tmpvar_38;
+  lowp vec4 tmpvar_39;
+  tmpvar_39 = texture (_CameraGBufferTexture1, tmpvar_8);
+  gbuffer1_3 = tmpvar_39;
+  lowp vec4 tmpvar_40;
+ 

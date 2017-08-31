@@ -1,0 +1,54 @@
+ {
+    tmpvar_27 = tmpvar_25.y;
+  } else {
+    tmpvar_27 = 1.0;
+  };
+  mediump float tmpvar_28;
+  if (tmpvar_24.z) {
+    tmpvar_28 = tmpvar_25.z;
+  } else {
+    tmpvar_28 = 1.0;
+  };
+  mediump float tmpvar_29;
+  if (tmpvar_24.w) {
+    tmpvar_29 = tmpvar_25.w;
+  } else {
+    tmpvar_29 = 1.0;
+  };
+  mediump vec4 tmpvar_30;
+  tmpvar_30.x = tmpvar_26;
+  tmpvar_30.y = tmpvar_27;
+  tmpvar_30.z = tmpvar_28;
+  tmpvar_30.w = tmpvar_29;
+  mediump float tmpvar_31;
+  tmpvar_31 = dot (tmpvar_30, vec4(0.25, 0.25, 0.25, 0.25));
+  highp vec4 tmpvar_32;
+  tmpvar_32.w = 1.0;
+  tmpvar_32.xyz = tmpvar_11;
+  lowp vec4 tmpvar_33;
+  highp vec3 P_34;
+  P_34 = (_LightMatrix0 * tmpvar_32).xyz;
+  tmpvar_33 = textureCube (_LightTexture0, P_34);
+  highp float tmpvar_35;
+  tmpvar_35 = ((atten_6 * tmpvar_31) * tmpvar_33.w);
+  atten_6 = tmpvar_35;
+  lowp vec4 tmpvar_36;
+  tmpvar_36 = texture2D (_CameraNormalsTexture, tmpvar_8);
+  nspec_5 = tmpvar_36;
+  mediump vec3 tmpvar_37;
+  tmpvar_37 = normalize(((nspec_5.xyz * 2.0) - 1.0));
+  mediump float tmpvar_38;
+  tmpvar_38 = max (0.0, dot (lightDir_7, tmpvar_37));
+  highp vec3 tmpvar_39;
+  tmpvar_39 = normalize((lightDir_7 - normalize(
+    (tmpvar_11 - _WorldSpaceCameraPos)
+  )));
+  h_4 = tmpvar_39;
+  mediump float tmpvar_40;
+  tmpvar_40 = pow (max (0.0, dot (h_4, tmpvar_37)), (nspec_5.w * 128.0));
+  spec_3 = tmpvar_40;
+  highp float tmpvar_41;
+  tmpvar_41 = (spec_3 * clamp (tmpvar_35, 0.0, 1.0));
+  spec_3 = tmpvar_41;
+  highp vec3 tmpvar_42;
+  tmpvar_42 = (_LightColor.

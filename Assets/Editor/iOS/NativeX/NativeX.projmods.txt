@@ -1,0 +1,12 @@
+{
+	"group": "",
+	"libs": ["libsqlite3.dylib"],
+	"frameworks": [],
+	"headerpaths": [],
+	"files":   [],
+	"folders": [],
+	"excludes": ["^.*.meta$", "^.*.mdown^", "^.*.pdf$", "^.*.DS_Store$"],
+	"linker_flags": [],
+	"compiler_flags": [],
+	"embed_binaries": []
+}

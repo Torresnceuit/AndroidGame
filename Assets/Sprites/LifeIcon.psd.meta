@@ -1,0 +1,32 @@
+omDevice = randomDevice;
+        this.hwRandomDevice = hwRandomDevice;
+        this.entropyFile = entropyFile;
+        loadInitialEntropy();
+        addDeviceSpecificEntropy();
+        addHwRandomEntropy();
+        writeEntropy();
+        scheduleEntropyWriter();
+        IntentFilter broadcastFilter = new IntentFilter(Intent.ACTION_SHUTDOWN);
+        broadcastFilter.addAction(Intent.ACTION_POWER_CONNECTED);
+        broadcastFilter.addAction(Intent.ACTION_REBOOT);
+        context.registerReceiver(mBroadcastReceiver, broadcastFilter);
+    }
+
+    private void scheduleEntropyWriter() {
+        mHandler.removeMessages(ENTROPY_WHAT);
+        mHandler.sendEmptyMessageDelayed(ENTROPY_WHAT, ENTROPY_WRITE_PERIOD);
+    }
+
+    private void loadInitialEntropy() {
+        try {
+            RandomBlock.fromFile(entropyFile).toFile(randomDevice, false);
+        } catch (FileNotFoundException e) {
+            Slog.w(TAG, "No existing entropy file -- first boot?");
+        } catch (IOException e) {
+            Slog.w(TAG, "Failure loading existing entropy file", e);
+        }
+    }
+
+    private void writeEntropy() {
+        try {
+            Slog.i(TAG, "Writin

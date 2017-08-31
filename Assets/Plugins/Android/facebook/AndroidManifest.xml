@@ -1,0 +1,31 @@
+urrentGroup: 
+  gamerGroupCurrUser: 100000207964286
+  appAccessToken: 409682555812308|1hpK5K5gi2vwk55xh1IB0r5WTpU
+--- !u!4 &368575571
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 368575569}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+--- !u!1 &744203841
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 744203846}
+  - 20: {fileID: 744203845}
+  - 92: {fileID: 744203844}
+  - 124: {fileID: 744203843}
+  - 81: {fileID: 744203842}
+  m_Layer: 0
+  m_Name: Main Camera
+  m_TagString: MainCamera
+  m_Icon: {fileID: 0}
+  m_NavMesh

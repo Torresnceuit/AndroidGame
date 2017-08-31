@@ -1,0 +1,102 @@
+ai.getAndIncrement());
+        assertEquals(2, ai.get());
+        ai.set(-2);
+        assertEquals(-2, ai.getAndIncrement());
+        assertEquals(-1, ai.getAndIncrement());
+        assertEquals(0, ai.getAndIncrement());
+        assertEquals(1, ai.get());
+    }
+
+    /**
+     * addAndGet adds given value to current, and returns current value
+     */
+    public void testAddAndGet() {
+        AtomicLong ai = new AtomicLong(1);
+        assertEquals(3, ai.addAndGet(2));
+        assertEquals(3, ai.get());
+        assertEquals(-1, ai.addAndGet(-4));
+        assertEquals(-1, ai.get());
+    }
+
+    /**
+     * decrementAndGet decrements and returns current value
+     */
+    public void testDecrementAndGet() {
+        AtomicLong ai = new AtomicLong(1);
+        assertEquals(0, ai.decrementAndGet());
+        assertEquals(-1, ai.decrementAndGet());
+        assertEquals(-2, ai.decrementAndGet());
+        assertEquals(-2, ai.get());
+    }
+
+    /**
+     * incrementAndGet increments and returns current value
+     */
+    public void testIncrementAndGet() {
+        AtomicLong ai = new AtomicLong(1);
+        assertEquals(2, ai.incrementAndGet());
+        assertEquals(2, ai.get());
+        ai.set(-2);
+        assertEquals(-1, ai.incrementAndGet());
+        assertEquals(0, ai.incrementAndGet());
+        assertEquals(1, ai.incrementAndGet());
+        assertEquals(1, ai.get());
+    }
+
+    /**
+     * a deserialized serialized atomic holds same value
+     */
+    public void testSerialization() throws Exception {
+        AtomicLong x = new AtomicLong();
+        AtomicLong y = serialClone(x);
+        assertNotSame(x, y);
+        x.set(-22);
+        AtomicLong z = serialClone(x);
+        assertNotSame(y, z);
+        assertEquals(-22, x.get());
+        assertEquals(0, y.get());
+        assertEquals(-22, z.get());
+    }
+
+    /**
+     * toString returns current value.
+     */
+    public void testToString() {
+        AtomicLong ai = new AtomicLong();
+        assertEquals("0", ai.toString());
+        for (long x : VALUES) {
+            ai.set(x);
+            assertEquals(Long.toString(x), ai.toString());
+        }
+    }
+
+    /**
+     * intValue returns current value.
+     */
+    public void testIntValue() {
+        AtomicLong ai = new AtomicLong();
+        assertEquals(0, ai.intValue());
+        for (long x : VALUES) {
+            ai.set(x);
+            assertEquals((int)x, ai.intValue());
+        }
+    }
+
+    /**
+     * longValue returns current value.
+     */
+    public void testLongValue() {
+        AtomicLong ai = new AtomicLong();
+        assertEquals(0L, ai.longValue());
+        for (long x : VALUES) {
+            ai.set(x);
+            assertEquals(x, ai.longValue());
+        }
+    }
+
+    /**
+     * floatValue returns current value.
+     */
+    public void testFloatValue() {
+        AtomicLong ai = new AtomicLong();
+        assertEquals

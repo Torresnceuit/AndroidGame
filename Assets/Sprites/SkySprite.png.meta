@@ -1,0 +1,35 @@
+s Iterator<T> {
+        LinkedEntry<K, V> next = header.nxt;
+        LinkedEntry<K, V> lastReturned = null;
+        int expectedModCount = modCount;
+
+        public final boolean hasNext() {
+            return next != header;
+        }
+
+        final LinkedEntry<K, V> nextEntry() {
+            if (modCount != expectedModCount)
+                throw new ConcurrentModificationException();
+            LinkedEntry<K, V> e = next;
+            if (e == header)
+                throw new NoSuchElementException();
+            next = e.nxt;
+            return lastReturned = e;
+        }
+
+        public final void remove() {
+            if (modCount != expectedModCount)
+                throw new ConcurrentModificationException();
+            if (lastReturned == null)
+                throw new IllegalStateException();
+            LinkedHashMap.this.remove(lastReturned.key);
+            lastReturned = null;
+            expectedModCount = modCount;
+        }
+    }
+
+    private final class KeyIterator extends LinkedHashIterator<K> {
+        public final K next() { return nextEntry().key; }
+    }
+
+    private final c

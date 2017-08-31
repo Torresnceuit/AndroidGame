@@ -1,0 +1,38 @@
+<div class="paging-links layout-content-col col-10">
+          
+            <a href="#" class="next-page-link hide"
+                zh-tw-lang="下一堂課"
+                zh-cn-lang="下一课"
+                ru-lang="Следующий"
+                ko-lang="다음"
+                ja-lang="次へ"
+                es-lang="Siguiente"
+                >Next</a>
+            <a href="#" class="start-class-link hide"
+                zh-tw-lang="開始上課"
+                zh-cn-lang="开始"
+                ru-lang="Начало работы"
+                ko-lang="시작하기"
+                ja-lang="開始する"
+                es-lang="Empezar"
+                >Get started</a>
+            <a href="#" class="next-class-link hide">Next class</a>
+          
+        </div>
+        <div class="layout-content-col plus-container col-2" >
+          
+            <div class="g-plusone" data-size="medium"></div>
+          
+        </div>
+        
+      </div>
+
+  </div> <!-- end jd-content -->
+
+<div id="footer" class="wrap" >
+        
+
+  <div id="copyright">
+    
+  Except as noted, this content is 
+ 

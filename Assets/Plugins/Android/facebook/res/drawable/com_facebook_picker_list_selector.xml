@@ -1,0 +1,77 @@
+ 
+         
+        abstract 
+         
+        <a href="../../../../../reference/java/lang/Object.html">Object</a>
+      </span>
+      <span class="sympad">removeAttribute</span>
+      <span class="normal">(<a href="../../../../../reference/java/lang/String.html">String</a> id)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+  Added in <a href="../../../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 1</a></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+<A NAME="setAttribute(java.lang.String, java.lang.Object)"></A>
+
+<div class="jd-details api apilevel-1"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+        abstract 
+         
+        void
+      </span>
+      <span class="sympad">setAttribute</span>
+      <span class="normal">(<a href="../../../../../reference/java/lang/String.html">String</a> id, <a href="../../../../../reference/java/lang/Object.html">Object</a> obj)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+  Added in <a href="../../../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 1</a></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+
+
+
+<!-- ========= END OF CLASS DATA ========= -->
+<A NAME="navbar_top"></A>
+
+<div id="footer" class="wrap" >
+        
+
+  <div id="copyright">
+    
+  Except as noted, this content is licensed under <a
+  href="http://www.apache.org/licenses/LICENSE-2.0">Ap

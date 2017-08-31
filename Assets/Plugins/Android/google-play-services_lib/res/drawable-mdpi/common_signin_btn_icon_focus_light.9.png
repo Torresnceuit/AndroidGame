@@ -1,0 +1,28 @@
+                   // since there could be recently freed objects in the unqueued list which are not
+                    // yet on the finalizer queue. This could cause the sentinel to run before the
+                    // objects are finalized. b/17381967
+                    // Make circular list if unenqueued goes through native so that we can prevent
+                    // races where the GC updates the pendingNext before we do. If it is non null, then
+                    // we update the pending next to make a circular list while holding a lock.
+                    // b/17462553
+                    if (!sentinelReference.makeCircularListIfUnenqueued()) {
+                        return false;
+                    }
+                    ReferenceQueue.add(sentinelReference);
+                    return true;
+                }
+            }
+        }
+        // We just created a finalizable object and still hold a reference to it.
+        // It must be on the list.
+        throw new AssertionError("newly-created live Sentinel not on list!");
+    }
+
+    private native boolean makeCircularListIfUnenqueued();
+
+    /**
+     * A marker object that we can immediately enqueue. When this object's
+     * finalize() method is called, we know all previously-enqueued finalizable
+     * references have been finalized.
+     */
+    private static class Sent

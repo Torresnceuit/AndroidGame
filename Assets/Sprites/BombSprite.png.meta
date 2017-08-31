@@ -1,0 +1,32 @@
+               return ImsCallProfile.OIR_PRESENTATION_RESTRICTED;
+            case PhoneConstants.PRESENTATION_ALLOWED:
+                return ImsCallProfile.OIR_PRESENTATION_NOT_RESTRICTED;
+            default:
+                return ImsCallProfile.OIR_DEFAULT;
+        }
+    }
+
+    /**
+     * Translate OIR value to presentation value
+     * @param oir value
+     * @return presentation value
+     */
+    public static int OIRToPresentation(int oir) {
+        switch(oir) {
+            case ImsCallProfile.OIR_PRESENTATION_RESTRICTED:
+                return PhoneConstants.PRESENTATION_RESTRICTED;
+            case ImsCallProfile.OIR_PRESENTATION_NOT_RESTRICTED:
+                return PhoneConstants.PRESENTATION_ALLOWED;
+            default:
+                return PhoneConstants.PRESENTATION_UNKNOWN;
+        }
+    }
+
+    /**
+     * Determines if a video state is set in a video state bit-mask.
+     *
+     * @param videoState The video state bit mask.
+     * @param videoStateToCheck The particular video state to check.
+     * @return True if the video state is set in the bit-mask.
+     */
+    private static b

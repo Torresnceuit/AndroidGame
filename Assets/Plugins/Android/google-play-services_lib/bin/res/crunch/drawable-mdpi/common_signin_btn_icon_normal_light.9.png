@@ -1,0 +1,32 @@
+e...
+                mSystemServiceManager.startBootPhase(
+                        SystemService.PHASE_THIRD_PARTY_APPS_CAN_START);
+
+                try {
+                    if (wallpaperF != null) wallpaperF.systemRunning();
+                } catch (Throwable e) {
+                    reportWtf("Notifying WallpaperService running", e);
+                }
+                try {
+                    if (immF != null) immF.systemRunning(statusBarF);
+                } catch (Throwable e) {
+                    reportWtf("Notifying InputMethodService running", e);
+                }
+                try {
+                    if (locationF != null) locationF.systemRunning();
+                } catch (Throwable e) {
+                    reportWtf("Notifying Location Service running", e);
+                }
+                try {
+                    if (countryDetectorF != null) countryDetectorF.systemRunning();
+                } catch (Throwable e) {
+                    reportWtf("Notifying CountryDetectorService running", e);
+                }
+                try {
+                    if (networkTimeUpdaterF != null) networkTimeUpdaterF.systemRunning();
+                } catch (Throwable e) {
+                    reportWtf("Notifying NetworkTimeService running", e);
+                }
+                try {
+                    if (commonTimeMgmtServiceF != null) {
+      

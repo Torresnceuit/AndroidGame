@@ -1,0 +1,42 @@
+.
+        return ((mSize == e.mSize) &&
+                (mType != DataType.NONE) &&
+                (mType == e.mType) &&
+                (mVectorSize == e.mVectorSize));
+    }
+
+    /**
+     * Builder class for producing complex elements with matching field and name
+     * pairs.  The builder starts empty.  The order in which elements are added
+     * is retained for the layout in memory.
+     *
+     */
+    public static class Builder {
+        RenderScript mRS;
+        Element[] mElements;
+        String[] mElementNames;
+        int[] mArraySizes;
+        int mCount;
+        int mSkipPadding;
+
+        /**
+         * Create a builder object.
+         *
+         * @param rs
+         */
+        public Builder(RenderScript rs) {
+            mRS = rs;
+            mCount = 0;
+            mElements = new Element[8];
+            mElementNames = new String[8];
+            mArraySizes = new int[8];
+        }
+
+        /**
+         * Add an array of elements to this element.
+         *
+         * @param element
+         * @param name
+         * @param arraySize
+         */
+        public Builder add(Element elem

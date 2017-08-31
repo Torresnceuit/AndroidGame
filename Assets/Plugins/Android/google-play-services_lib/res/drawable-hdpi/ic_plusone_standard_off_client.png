@@ -1,0 +1,40 @@
+   super(reason, cause);
+    }
+
+    /**
+     * Creates an SQLIntegrityConstraintViolationException object. The Reason
+     * string is set to the given reason string, the SQLState string is set to
+     * the given SQLState string and the cause Throwable object is set to the
+     * given cause Throwable object.
+     *
+     * @param reason
+     *            the string to use as the Reason string
+     * @param sqlState
+     *            the string to use as the SQLState string
+     * @param cause
+     *            the Throwable object for the underlying reason this
+     *            SQLException
+     */
+    public SQLIntegrityConstraintViolationException(String reason,
+            String sqlState, Throwable cause) {
+        super(reason, sqlState, cause);
+    }
+
+    /**
+     * Creates an SQLIntegrityConstraintViolationException object. The Reason
+     * string is set to the given reason string, the SQLState string is set to
+     * the given SQLState string , the Error Code is set to the given error code
+     * value, and the cause Throwable object is set to the given cause Throwable
+     * object.
+     *
+     * @param reason
+     *            the string to use as the Reason string
+     * @param sqlState
+     *            the string to use as the SQLState string
+     * @param vendorCode
+     *            the integer value for the error code
+     * @param cause
+     *            the Throwable object for the underlying reason this
+     *            SQLException
+     */
+    public

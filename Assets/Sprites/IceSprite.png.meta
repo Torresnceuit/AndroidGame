@@ -1,0 +1,27 @@
+<record>
+	<list id="items">
+		<record>
+			<string id="id" value="throw_in_left_point"/>
+			<boolean id="pre_load" value="false"/>
+			<boolean id="disable_head_tracking" value="false"/>
+			<string id="match_engine_type" value="GAA_THROW_IN_POINT"/>
+			<string id="main_hand" value="HT_HOLDING_UNDEFINED"/>
+			<string id="end_stance" value="ES_STANCE_UNDEFINED"/>
+			<string id="playback_type" value="NONE"/>
+		</record>
+		<record>
+			<string id="id" value="throw_in_loop_right"/>
+			<boolean id="pre_load" value="false"/>
+			<boolean id="disable_head_tracking" value="false"/>
+			<string id="match_engine_type" value="GAA_THROW_IN_POINT"/>
+			<string id="main_hand" value="HT_HOLDING_UNDEFINED"/>
+			<string id="end_stance" value="ES_STANCE_UNDEFINED"/>
+			<string id="playback_type" value="NONE"/>
+		</record>
+		<record>
+			<string id="id" value="throw_in_run_throw_end"/>
+			<boolean id="pre_load" value="false"/>
+			<boolean id="disable_head_tracking" value="false"/>
+			<string id="match_engine_type" value="GAA_THROW_IN_POINT"/>
+			<string id="main_hand" value="HT_HOLDING_UNDEFINED"/>
+		

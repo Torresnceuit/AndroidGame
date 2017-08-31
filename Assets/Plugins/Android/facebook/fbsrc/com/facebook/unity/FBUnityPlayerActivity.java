@@ -1,0 +1,4 @@
+2072996269148483637">"Du har forsøgt at låse tabletten op forkert <xliff:g id="NUMBER">%d</xliff:g> gange. Tabletten nulstilles til fabriksindstillingerne."</string>
+    <string name="kg_failed_attempts_now_wiping" product="default" msgid="4817627474419471518">"Du har forsøgt at låse telefonen op forkert <xliff:g id="NUMBER">%d</xliff:g> gange. Telefonen nulstilles til fabriksindstillingerne."</string>
+    <string name="kg_failed_attempts_almost_at_login" product="tablet" msgid="3253575572118914370">"Du har tegnet dit oplåsningsmønster forkert <xliff:g id="NUMBER_0">%d</xliff:g> gange. Efter <xliff:g id="NUMBER_1">%d</xliff:g> yderligere mislykkede forsøg vil du blive bedt om at låse din tablet op ved hjælp af en e-mailkonto"\n\n" Prøv igen om <xliff:g id="NUMBER_2">%d</xliff:g> sekunder."</string>
+    <str

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2014 Google Inc. All Rights Reserved. -->
+<resources>
+    <!-- Attributes for the WalletFragment &lt;fragment&gt; tag -->
+    <declare-styleable name="WalletFragmentOptions">
+        <!-- Theme to be used for the Wallet selector -->
+        <attr name="theme" format="enum">
+            <enum name="holo_dark" value="0"/>
+            <enum name="holo_light" value="1"/>
+        </attr>
+        <!-- Google Wallet environment to use -->
+        <attr name="environment" format="enum">
+            <enum name="production" value="1"/>
+            <enum name="sandbox" value="0"/>
+            <enum name="strict_sandbox" value="2"/>
+        </attr>
+        <!-- A style resource specifing attributes to customize the look and feel of WalletFragment -->
+        <attr name="fragmentStyle" format="reference"/>
+        <!-- Fragment mode -->
+        <attr name="fragmentMode" format="enum">
+            <enum name="buyButton" value="1"/>
+            <enum name="selectionDetails" value="2"/>
+        </attr>
+    </declare-styleable>
+
+    <!-- Attributes that may be specified in a style resource to customize the look and feel of
+         WalletFragment

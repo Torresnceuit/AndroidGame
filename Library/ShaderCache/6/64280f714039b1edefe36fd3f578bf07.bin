@@ -1,0 +1,19 @@
+r_32 = max (0.0, dot (lightDir_7, tmpvar_31));
+  mediump float tmpvar_33;
+  tmpvar_33 = (1.0 - gbuffer1_3.w);
+  mediump float tmpvar_34;
+  mediump float tmpvar_35;
+  tmpvar_35 = (10.0 / log2((
+    ((1.0 - tmpvar_33) * 0.968)
+   + 0.03)));
+  tmpvar_34 = (tmpvar_35 * tmpvar_35);
+  mediump vec4 tmpvar_36;
+  tmpvar_36.w = 1.0;
+  tmpvar_36.xyz = (((gbuffer0_4.xyz + 
+    ((((tmpvar_34 + 1.0) * pow (
+      max (0.0, dot (tmpvar_28, tmpvar_31))
+    , tmpvar_34)) / ((
+      (unity_LightGammaCorrectionConsts.z * (((tmpvar_32 * tmpvar_32) * gbuffer1_3.w) + (tmpvar_33 * tmpvar_33)))
+     * tmpvar_32) + 0.0001)) * gbuffer1_3.xyz)
+  ) * tmpvar_5) * max (0.0, dot (tmpvar_28, lightDir_7)));
+  

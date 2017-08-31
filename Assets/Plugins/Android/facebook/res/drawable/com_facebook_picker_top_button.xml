@@ -1,0 +1,22 @@
+     getContext(), R.attr.mediaRoutePlayDrawable));
+                    mPlayPauseButton.setContentDescription(getContext().getResources()
+                            .getText(R.string.mr_media_route_controller_play));
+                } else {
+                    mPlayPauseButton.setVisibility(View.GONE);
+                }
+            } else {
+                mPlayPauseButton.setVisibility(View.GONE);
+            }
+        }
+        return true;
+    }
+
+    private Drawable getIconDrawable() {
+        if (mRoute.isConnecting()) {
+            if (mMediaRouteConnectingDrawable == null) {
+                mMediaRouteConnectingDrawable = MediaRouterThemeHelper.getThemeDrawable(
+                        getContext(), R.attr.mediaRouteConnectingDrawable);
+            }
+            return mMediaRouteConnectingDrawable;
+        } else {
+           

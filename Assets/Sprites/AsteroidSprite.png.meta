@@ -1,0 +1,47 @@
+       y: 477
+        width: 116
+        height: 126
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: 35f7d4fa3fdf5ae46be107004f93497a_37
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 477
+        width: 118
+        height: 126
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: 35f7d4fa3fdf5ae46be107004f93497a_38
+      rect:
+        serializedVersion: 2
+        x: 652
+        y: 476
+        width: 110
+        height: 127
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: 35f7d4fa3fdf5ae46be107004f93497a_39
+      rect:
+        serializedVersion: 2
+        x: 764
+        y: 474
+        width: 101
+        height: 129
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: 35f7d4fa3fdf5ae46be107004f93497a_40
+      rect:
+        serializedVersion: 2
+        x: 869
+        y: 473
+        width: 102
+        height: 130
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: 3

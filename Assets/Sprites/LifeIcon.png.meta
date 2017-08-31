@@ -1,0 +1,29 @@
+/,
+                    mAppearAnimationUtils.getInterpolator(),
+                    null /* finishRunnable */);
+        }
+    }
+
+    @Override
+    public boolean startDisappearAnimation(final Runnable finishRunnable) {
+        mLockPatternView.clearPattern();
+        enableClipping(false);
+        setTranslationY(0);
+        animate()
+                .setDuration(300)
+                .setInterpolator(mDisappearAnimationUtils.getInterpolator())
+                .translationY(-mDisappearAnimationUtils.getStartTranslation());
+        mDisappearAnimationUtils.startAnimation(mLockPatternView.getCellStates(),
+                new Runnable() {
+                    @Override
+                    public void run() {
+                        enableClipping(true);
+                        if (finishRunnable != null) {
+                            finishRunnable.run();
+                        }
+                    }
+                }, KeyguardPatternView.this);
+        if (!TextUtils.isEmpty(mHelpMessage.getText())) {
+            mDisappearAnimationUtils.createAnimation(mHelpMessage, 0,
+                    200,
+                    - mDisappearAnimationUtils.getS

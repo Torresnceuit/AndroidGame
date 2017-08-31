@@ -1,0 +1,50 @@
+ss="normal">
+        public 
+        static 
+         
+         
+         
+        <a href="../../../reference/java/lang/Float.html">Float</a>
+      </span>
+      <span class="sympad">valueOf</span>
+      <span class="normal">(float f)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 1</a></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Returns a <code>Float</code> instance for the specified float value.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>f</td>
+          <td>the float value to store in the instance.</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>a <code>Float</code> instance containing <code>f</code>.</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+
+
+
+<!-- ========= END OF CLASS DA

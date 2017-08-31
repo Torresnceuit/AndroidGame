@@ -1,0 +1,16 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{D2981B11-89D6-AB6C-641B-5CA385AC37DE}") = "NativeX", "Assembly-CSharp-firstpass.csproj", "{EF506DAB-3330-28BE-1921-AFC95F562BE5}"
+EndProject
+Project("{D2981B11-89D6-AB6C-641B-5CA385AC37DE}") = "NativeX", "Assembly-CSharp.csproj", "{E44771DA-6977-D9C1-5A04-94E01D389EF5}"
+EndProject
+Project("{D2981B11-89D6-AB6C-641B-5CA385AC37DE}") = "NativeX", "Assembly-CSharp-Editor.csproj", "{D15E10A5-039F-0D7B-BF2D-A5A4EDEB2C0E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EF506DAB-3330-28BE-1921-AFC95F562BE5}.Debug|Any CP
